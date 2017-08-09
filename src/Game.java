@@ -15,7 +15,7 @@ public class Game {
         this.numRounds=roundCount;
         this.numPlayers = playerCount;
         int index= 0;
-        while(playerCount>index)
+        while(this.numPlayers>index)
         {
             Player p = new Player(playerCount);
             this.playerList.add(index,p);
@@ -24,6 +24,15 @@ public class Game {
         }
 
     }
+    public void printAllPlayers()
+    {
+        System.out.println(this.playerList.size());
+        for(int i = 0; i<this.playerList.size(); i++)
+        {
+            this.playerList.get(i).printPlayer();
+        }
+    }
+
     public void nextRound()
     {
         for(int i =0; i<this.playerList.size(); i++)
@@ -81,6 +90,7 @@ public class Game {
             inputRounds--;
         }
         Player winner= game.findWinner();
+        //game.printAllPlayers();
 
         System.out.println("The winner is player "+winner.id+" with total rounds being "
         +winner.rounds+" and located on square "+winner.squareLoc);
