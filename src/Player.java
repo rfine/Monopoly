@@ -31,4 +31,11 @@ public class Player {
             this.rounds +=1;
         }
     }
+
+    public void printPlayer()
+    {
+        System.out.println("player id: "+ this.id + "\n"+
+        "player squareLoc: "+this.squareLoc+"\n"+"player round: "+
+        this.rounds);
+    }
 }
